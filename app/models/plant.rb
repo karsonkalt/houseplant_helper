@@ -16,8 +16,12 @@ class Plant < ApplicationRecord
     Watering.most_recent_watering(self)[0]
   end
 
+  def most_recent_watering_date
+    most_recent_watering.datetime.to_date
+  end
+
   def days_since_most_recent_watering
-    date_dif = Date.today - most_recent_watering.datetime.to_date
+    date_dif = Date.today - most_recent_watering_date
     date_dif.to_i
   end
 
