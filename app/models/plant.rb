@@ -11,7 +11,7 @@ class Plant < ApplicationRecord
 
   def inherit_water_frequency_from_species_if_nil
     if water_frequency == nil
-      water_frequency = species.water_frequency
+      self.water_frequency = species.water_frequency
     end
   end
 
