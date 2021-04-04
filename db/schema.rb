@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_023404) do
     t.integer "species_id", null: false
     t.integer "user_id", null: false
     t.string "nickname"
-    t.string "water_frequency"
+    t.integer "water_frequency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["species_id"], name: "index_plants_on_species_id"
