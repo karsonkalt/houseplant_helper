@@ -50,6 +50,11 @@ class Plant < ApplicationRecord
       Date.today + (water_frequency - days_since_most_recent_watering).days
     end
   end
+
+  def water_again_in_days
+    date_dif = water_again_on_date - Date.today
+    date_dif.to_i
+  end
   
   private
 

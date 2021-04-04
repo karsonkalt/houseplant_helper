@@ -13,7 +13,7 @@
 
   <body>
     <nav>
-      <h1>Houseplant Helper</h1>
+      <h1 class="title">Houseplant Helper</h1>
       <%= link_to "Species", species_index_path %>
       <%= link_to "Users", users_path %>
     </nav>
@@ -25,6 +25,7 @@
       </div>
       <div class="content-container">
         <%= yield %>
+        <span class="footer">Built by Karson Kalt © April 2021</span>
       </div>
     </div>
   </body>
