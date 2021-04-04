@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :plants
+    has_many :plants, dependent: :destroy
     has_many :waterings, through: :plants
     has_many :species, through: :plants
 

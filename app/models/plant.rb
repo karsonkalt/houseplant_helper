@@ -1,7 +1,7 @@
 class Plant < ApplicationRecord
   belongs_to :species
   belongs_to :user
-  has_many :waterings
+  has_many :waterings, dependent: :destroy
 
   validates :nickname, length: {maximum: 20}
   validates :water_frequency, presence: true
