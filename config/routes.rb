@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :plants do
-      resouces :waterings
+      resources :waterings
     end
   end
 
