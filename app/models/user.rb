@@ -7,5 +7,7 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :username, length: {in: 4..15}
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
+    validates :email, presence: true
+    validates :email, uniqueness: true
 
 end

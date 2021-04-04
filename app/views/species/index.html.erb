@@ -1,0 +1,4 @@
+<h1>All Species</h1>
+<% @species.each do |species| %>
+    <%= link_to species.common_name, species_path(species) %>
+<% end %>
