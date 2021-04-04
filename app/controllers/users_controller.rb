@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
+    before_action :find_and_set_user, only: [:show]
+
     def index
+        @users = User.all
     end
 
     def new
@@ -10,7 +13,6 @@ class UsersController < ApplicationController
     end
     
     def show
-        @user = User.find_by_id(params[:id])
     end
 
     def edit
@@ -20,6 +22,12 @@ class UsersController < ApplicationController
     end
 
     def destroy
+    end
+
+    private
+
+    def find_and_set_user
+        @user = User.find_by_id(params[:id])
     end
 
 end
