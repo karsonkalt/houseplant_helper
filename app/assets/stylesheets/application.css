@@ -1,8 +1,10 @@
 body {
     display: flex;
+    background-color: #f0f0f0;
 }
 
 nav {
+    position: fixed;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -25,7 +27,7 @@ nav a:hover {
 
 .page-container {
     width: 100%;
-    padding: 20px;
+    padding: 20px 20px 20px 280px;
     background-color: #f0f0f0;
 }
 
@@ -52,6 +54,19 @@ nav a:hover {
     background-color: #d6d6d6;
 }
 
+.content-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
 .large-species-icon {
     width: 150px;
     height: 150px;
@@ -59,8 +74,8 @@ nav a:hover {
 }
 
 .small-species-icon {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
 }
 
