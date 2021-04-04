@@ -8,8 +8,6 @@ class Plant < ApplicationRecord
 
   before_validation :inherit_water_frequency_from_species_if_nil
 
-  scope :overdue_watering, -> {}
-
   # Instance Methods
 
   def most_recent_watering
