@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :plants
-  resources :users
+
+  resources :users do
+    resources :plants do
+      resouces :waterings
+    end
+  end
+
   resources :species, only: [:index, :show]
-  resources :waterings
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end
