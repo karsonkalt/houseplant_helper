@@ -45,4 +45,7 @@ brad = {username: "brad",
 users = [karson, patrick, brad]
 users.each { |user| User.create(user) }
 
-ivysaur = Plant.create(species_id: devils_ivy.id, nickname: "Ivysaur", water_frequency)
+ivysaur = Plant.create(species: devils_ivy, nickname: "Ivysaur", creator_id: karson.id)
+snakey = Plant.create(species: snake_plant, nickname: "Snakey", creator_id: karson.id)
+fiddle = Plant.create(species: fiddleleaf_fig, creator_id: patrick.id)
+cash = Plant.create(species: cash, nickname: "Cash", creator_id: brad.id)
