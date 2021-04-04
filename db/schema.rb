@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_023404) do
   create_table "ownerships", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "plant_id", null: false
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["plant_id"], name: "index_ownerships_on_plant_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_023404) do
     t.integer "species_id", null: false
     t.string "nickname"
     t.string "water_frequency"
-    t.integer "creator_id", null: false
+    t.integer "creator", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["species_id"], name: "index_plants_on_species_id"
@@ -62,6 +62,6 @@ ActiveRecord::Schema.define(version: 2021_04_04_023404) do
   add_foreign_key "ownerships", "plants"
   add_foreign_key "ownerships", "users"
   add_foreign_key "plants", "species"
-  add_foreign_key "plants", "users", column: "creator_id"
+  add_foreign_key "plants", "users", column: "creator"
   add_foreign_key "waterings", "plants"
 end

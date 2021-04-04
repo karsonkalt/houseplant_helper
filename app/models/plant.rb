@@ -5,7 +5,7 @@ class Plant < ApplicationRecord
   has_many :users, through: :ownerships
 
   validates :nickname, length: {maximum: 20}
-  validates :creator_id, presence: true
+  validates :creator, presence: true
 
   before_save :inherit_water_frequency_from_species_if_nil
 
@@ -20,7 +20,7 @@ class Plant < ApplicationRecord
   end
 
   def create_ownership
-    Ownership.create(user: creator_id, plant: id, confirmed: true)
+    Ownership.create(user: creator, plant: id, confirmed: true)
   end
 
 end
