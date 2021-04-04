@@ -3,6 +3,7 @@ class CreateWaterings < ActiveRecord::Migration[6.1]
     create_table :waterings do |t|
       t.belongs_to :plant, null: false, foreign_key: true
       t.datetime :datetime
+      t.text :notes
 
       t.timestamps
     end

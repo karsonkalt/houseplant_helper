@@ -12,24 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2021_04_04_023404) do
 
-  create_table "ownerships", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "plant_id", null: false
-    t.boolean "confirmed", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["plant_id"], name: "index_ownerships_on_plant_id"
-    t.index ["user_id"], name: "index_ownerships_on_user_id"
-  end
-
   create_table "plants", force: :cascade do |t|
     t.integer "species_id", null: false
+    t.integer "users_id", null: false
     t.string "nickname"
     t.string "water_frequency"
-    t.integer "creator", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["species_id"], name: "index_plants_on_species_id"
+    t.index ["users_id"], name: "index_plants_on_users_id"
   end
 
   create_table "species", force: :cascade do |t|
@@ -54,14 +45,13 @@ ActiveRecord::Schema.define(version: 2021_04_04_023404) do
   create_table "waterings", force: :cascade do |t|
     t.integer "plant_id", null: false
     t.datetime "datetime"
+    t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["plant_id"], name: "index_waterings_on_plant_id"
   end
 
-  add_foreign_key "ownerships", "plants"
-  add_foreign_key "ownerships", "users"
   add_foreign_key "plants", "species"
-  add_foreign_key "plants", "users", column: "creator"
+  add_foreign_key "plants", "users", column: "users_id"
   add_foreign_key "waterings", "plants"
 end
