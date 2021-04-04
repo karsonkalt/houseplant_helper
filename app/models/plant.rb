@@ -10,6 +10,14 @@ class Plant < ApplicationRecord
 
   # Instance Methods
 
+  def nickname_for_views
+    if nickname
+      nickname
+    else
+      "#{user.username}'s #{species.common_name}"
+    end
+  end
+
   def most_recent_watering
     Watering.most_recent_watering(self)[0]
   end

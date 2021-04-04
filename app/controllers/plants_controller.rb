@@ -9,6 +9,7 @@ class PlantsController < ApplicationController
     end
     
     def show
+        @plant = Plant.find_by(id: params[:id], user_id: params[:user_id])
     end
 
     def edit
