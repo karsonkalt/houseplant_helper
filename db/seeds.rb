@@ -31,3 +31,5 @@ ivysaur = Plant.create(species: devils_ivy, nickname: "Ivysaur", user: karson)
 snakey = Plant.create(species: snake_plant, nickname: "Snakey", user: karson)
 fiddle = Plant.create(species: fiddleleaf_fig, user: patrick)
 cash = Plant.create(species: cash, nickname: "Cash", user: brad)
+
+Watering.create(plant: ivysaur, date_time)
