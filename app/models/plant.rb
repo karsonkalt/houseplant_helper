@@ -5,7 +5,11 @@ class Plant < ApplicationRecord
 
   validates :nickname, length: {maximum: 20}
 
-  before_save :inherit_water_frequency_from_species_if_nil
+  before_validation :inherit_water_frequency_from_species_if_nil
+
+  def most_recent_watering
+    Watering.most_recent_watering(self)
+  end
   
   private
 
