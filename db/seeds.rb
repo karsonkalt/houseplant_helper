@@ -23,14 +23,35 @@ swiss_cheese_plant = Species.create({common_name: "Swiss cheese plant",
     image_path: "swiss_cheese_plant.jpg",
     notes: "It will take some direct sunlight, but not more than a few hours per day. It's also important not to put it in direct sunlight right away as it's getting acclimated to your home, because the leaves scorch easily."})
 
-karson = User.create({username: "karson", email: "karson@email.com"})
-patrick = User.create({username: "patrick", email: "patrick@email.com"})
-brad = User.create({username: "brad", email: "brad@email.com"})
+def random_user_generator
+    rand(30..100).times do
+        username = Faker::Internet.username(specifier: 4..15)
+        email = Faker::Internet.email
+        User.create(username: username, email: email)
+    end
+end
 
-ivysaur = Plant.create(species: devils_ivy, nickname: "Ivysaur", user: karson)
-snakey = Plant.create(species: snake_plant, nickname: "Snakey", user: karson)
-fiddle = Plant.create(species: fiddleleaf_fig, user: patrick)
-cash = Plant.create(species: money_tree, nickname: "Cash", user: brad)
+random_user_generator
+
+def random_plant_generator
+    rand(200..350).times do
+        if rand(1..4) == 1
+            nickname = nil
+        else
+            nickname = Faker::Creature::Cat.name
+        end
+        species_id = rand(1..(Species.count))
+        if rand(1..4) == 1
+            water_frequency = rand(7..30)
+        else
+            water_frequency = nil
+        end
+        user_id = rand(1..(User.count))
+        Plant.create(nickname: nickname, species_id: species_id, water_frequency: water_frequency, user_id: user_id)
+    end
+end
+
+random_plant_generator
 
 def random_watering_generator(plant)
     rand(1..20).times do
