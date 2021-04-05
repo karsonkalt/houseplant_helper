@@ -1,0 +1,17 @@
+<h1><%= @plant.nickname_for_views %></h1>
+<div class="card">
+    <h2><%= @plant.species.common_name %></h2>
+    <h2>Plant belongs to: <%= @user.username %></h2>
+    <h2>Water every <%= @plant.water_frequency %> days.</h2>
+    <h2>Last watered: <%= @plant.most_recent_watering_date %></h2>
+    <h2>Needs to be watered? <%= @plant.needs_to_be_watered? %></h2>
+    <h2>Water again on: <%= @plant.water_again_on_date %></h2>
+
+    <%= link_to "Waterings", user_plant_waterings_path(@user, @plant) %>
+    <%= link_to "Edit Plant", edit_user_plant_path(@user, @plant) %>
+    <%= form_with(model: @plant, url: user_plant_path(@user, @plant), method: :delete) do |f| %>
+        <%= f.submit "Delete Plant" %>
+    <% end %>
+
+    <%= image_tag @plant.species.image_path, class: "large-species-icon" %>
+</div>

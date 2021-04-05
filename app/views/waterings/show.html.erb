@@ -1,0 +1,9 @@
+<h1><%= @watering.plant.nickname_for_views %>'s Watering on <%= @watering.date_for_views %></h1>
+<div class="card">
+    <p><%= @watering.notes %></p>
+
+    <%= link_to "Edit Watering", edit_user_plant_watering_path(@user, @plant) %>
+    <%= form_with(model: @watering, url: user_plant_watering_path(@user, @plant), method: :delete) do |f| %>
+        <%= f.submit "Delete Watering" %>
+    <% end %>
+</div>

@@ -1,0 +1,26 @@
+<h1><%= @user.username%>'s Plants</h1>
+
+<% @plants.each do |plant| %>
+    
+    <div class="card plant-card <%= conditionally_add_overdue_watering_class(plant) %>">
+        
+        <div class="plant-card-name">
+            <%= image_tag plant.species.image_path, class: "small-species-icon" %>
+            <%= link_to plant.nickname_for_views, user_plant_path(@user, plant) %>
+        </div>
+
+        <div class="plant-card-watering-info">
+            <div class="plant-card-watering-info-section">
+                <p class="tiny-text">Last Watered</p>
+                <p><%= plant.days_since_most_recent_watering %> days ago</p>
+            </div>
+            <div class="plant-card-watering-info-section">
+                <p class="tiny-text">Water Again</p>
+                <p><%= conditionally_display_today_if_needs_to_be_watered(plant) %></p>
+            </div>
+        </div>
+
+        <%= link_to "Water this plant", "#", class: "water-button" %>
+    </div>
+
+<% end %>

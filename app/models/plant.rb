@@ -8,6 +8,8 @@ class Plant < ApplicationRecord
 
   before_validation :inherit_water_frequency_from_species_if_nil
 
+  scope :species, -> (species) {where(species_id: species.id)}
+
   # Instance Methods
 
   def nickname_for_views

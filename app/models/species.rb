@@ -6,4 +6,8 @@ class Species < ApplicationRecord
     validates :image_path, presence: true
     validates :notes, presence: true
 
+    def number_of_plants
+        Plant.species(self).count
+    end
+
 end

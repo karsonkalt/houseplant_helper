@@ -1,7 +1,16 @@
 <h1>All Species</h1>
+
 <% @species.each do |species| %>
-    <div class="card">
+
+    <div class="card plant-card">
+
+        <div class="plant-card-name">
             <%= image_tag species.image_path, class: "small-species-icon" %>
-        <%= link_to species.common_name, species_path(species) %>
+            <%= link_to species.common_name, species_path(species) %>
+        </div>
+
+        <div class="plant-card-counts-of-species">
+            <h1><%= species.number_of_plants %> Plants</h1>
+        </div>
     </div>
 <% end %>

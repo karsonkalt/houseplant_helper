@@ -1,0 +1,6 @@
+<h1><%= @plant.nickname_for_views%>'s Waterings</h1>
+<% @waterings.each do |watering| %>
+    <div class="card">
+        <%= link_to watering.date_for_views, user_plant_watering_path(user_id: @user, plant_id: @plant, id: watering) %>
+    </div>
+<% end %>
