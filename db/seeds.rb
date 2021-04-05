@@ -23,6 +23,13 @@ swiss_cheese_plant = Species.create({common_name: "Swiss cheese plant",
     image_path: "swiss_cheese_plant.jpg",
     notes: "It will take some direct sunlight, but not more than a few hours per day. It's also important not to put it in direct sunlight right away as it's getting acclimated to your home, because the leaves scorch easily."})
 
+NOTE = [
+    "He looked a little brown on the ends today. I turned him around and moved him to the living room.",
+    "It's too humid in the living room so I moved him back to the bedroom.",
+    "Happy and healthy as always!",
+    "Snipped the tips of his leaves to help him grow big and strong!"
+]
+
 def random_user_generator
     rand(30..100).times do
         username = Faker::Internet.username(specifier: 4..15)
@@ -56,7 +63,19 @@ random_plant_generator
 def random_watering_generator(plant)
     rand(1..20).times do
         random_datetime = DateTime.now - rand(1..99).days - rand(1..23).hours - rand(1..59).minutes - rand(1..59).seconds
-        Watering.create(plant: plant, datetime: random_datetime)
+        random_number = rand(1..10)
+        if random_number == 1
+            notes = NOTE[0]
+        elsif random_number == 2
+            notes = NOTE[1]
+        elsif random_number == 3
+            notes = NOTE[2]
+        elsif random_number == 4
+            notes = NOTE[3]
+        else
+            note = nil
+        end
+        Watering.create(plant: plant, datetime: random_datetime, notes: notes)
     end
 end
 
