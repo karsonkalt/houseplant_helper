@@ -16,18 +16,29 @@ nav {
     background-color: #8fc45d;
 }
 
+svg.header-logo {
+    width: 100px;
+    height: 100px;
+}
+
+path.leaf {
+    fill: white;
+}
+
 h1.title {
     color: white;
+    margin: 10px 0 50px 0;
 }
 
 nav a {
     border-radius: 40px;
     background-color: #84b655;
     color: white;
-    height: 40px;
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
+    padding: 10px 15px;
+    transition: .15s background-color;
 }
 
 nav a:hover {
@@ -49,23 +60,33 @@ nav a:hover {
 }
 
 .login-button {
-    height: 40px;
-    width: 80px;
-    font-size: 20px;
+    font-size: 26px;
     border-radius: 40px;
+    font-size: 16px;
     color: white;
     background-color: #84b655;
     text-decoration: none;
+    padding: 10px 15px;
+    transition: .15s background-color;
+}
+
+.login-button:hover {
+    background-color: #729c4a;
 }
 
 .logout-button {
-    height: 40px;
-    width: 80px;
-    font-size: 20px;
+    font-size: 26px;
     border-radius: 40px;
+    font-size: 16px;
     color: white;
     background-color: #d6d6d6;
     text-decoration: none;
+    padding: 10px 15px;
+    transition: .15s background-color;
+}
+
+.logout-button:hover {
+    background-color: #c5c5c5;
 }
 
 .content-container {

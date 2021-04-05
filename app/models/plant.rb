@@ -9,7 +9,7 @@ class Plant < ApplicationRecord
   before_validation :inherit_water_frequency_from_species_if_nil
 
   scope :species, -> (species) {where(species_id: species.id)}
-  scope :user, -> (user) {where(user_id: user.id)
+  scope :user, -> (user) {where(user_id: user.id)}
 
   # Instance Methods
 
