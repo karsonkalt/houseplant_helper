@@ -10,4 +10,8 @@ class User < ApplicationRecord
     validates :email, presence: true
     validates :email, uniqueness: true
 
+    def number_of_plants
+        Plant.user(self).count
+    end
+
 end
