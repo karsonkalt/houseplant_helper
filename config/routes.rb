@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users do
+  resources :users, only: [:index, :create, :show, :edit, :update, :destroy] do
     resources :plants do
       resources :waterings
     end
@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  get '/signup', to: 'users#new'
 
 end

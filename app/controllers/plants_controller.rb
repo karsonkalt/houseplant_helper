@@ -4,10 +4,11 @@ class PlantsController < ApplicationController
     before_action :find_and_set_plant, only: [:show, :edit, :update, :destroy]
 
     def index
-        @plants = @user.plants
+        @plants = @user.plants 
     end
 
     def new
+        @plant = @user.plants.build
     end
 
     def create
