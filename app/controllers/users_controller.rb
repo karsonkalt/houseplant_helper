@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
 
-    before_action :find_and_set_user, only: [:show]
+    before_action :find_and_set_user, only: [:show, :edit]
 
     def index
         @users = User.all
     end
 
     def new
+        @user = User.new
     end
 
     def create
