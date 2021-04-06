@@ -71,12 +71,23 @@ nav a:hover {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 10px;
     /* border: 1px solid red; */
 }
 
+.nav-username {
+    border-radius: 40px;
+    font-size: 16px;
+    color: #6f6f6f;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+}
+
+.nav-username:hover {
+    text-decoration: underline;
+}
+
 .login-button {
-    font-size: 26px;
     border-radius: 40px;
     font-size: 16px;
     color: white;
@@ -91,7 +102,6 @@ nav a:hover {
 }
 
 .signup-button {
-    font-size: 26px;
     border-radius: 40px;
     font-size: 16px;
     color: white;
@@ -106,7 +116,6 @@ nav a:hover {
 }
 
 .logout-button {
-    font-size: 26px;
     border-radius: 40px;
     font-size: 16px;
     color: white;
