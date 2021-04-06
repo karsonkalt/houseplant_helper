@@ -1,3 +1,5 @@
+<%= display_errors_if_any(@plant) %>
+
 <div class="card">
 
     <%= form_with(model: @plant, url: user_plants_path(@user)) do |f| %>
