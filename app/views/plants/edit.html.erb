@@ -1,3 +1,4 @@
 <h1>Edit <%= @plant.nickname_for_views %></h1>
 
+<%= display_errors_if_any(@plant) %>
 <%= render "form" %>
