@@ -1,4 +1,9 @@
 class SessionsController < ApplicationController
+
+    def index
+        render layout:false
+    end
+
     def new
     end
 

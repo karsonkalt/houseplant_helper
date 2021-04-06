@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'sessions#index'
+
   resources :users, only: [:index, :create, :show, :edit, :update, :destroy] do
     resources :plants do
       resources :waterings

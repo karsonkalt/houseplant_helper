@@ -4,7 +4,7 @@ body {
     font-family: "Arial";
 }
 
-nav {
+.nav {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -16,6 +16,21 @@ nav {
     background-color: #8fc45d;
 }
 
+.full-page-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #8fc45d;
+    display: flex;
+    justify-content: center;
+}
+
+.full-nav {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    justify-content: center;
+}
+
 svg.header-logo {
     width: 100px;
     height: 100px;
@@ -24,6 +39,7 @@ svg.header-logo {
 path.leaf {
     fill: white;
 }
+
 
 h1.title {
     color: white;
@@ -55,7 +71,7 @@ nav a:hover {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     /* border: 1px solid red; */
 }
 
@@ -72,6 +88,21 @@ nav a:hover {
 
 .login-button:hover {
     background-color: #729c4a;
+}
+
+.signup-button {
+    font-size: 26px;
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #74a14a;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: .15s background-color border;
+}
+
+.signup-button:hover {
+    background-color: #628640;
 }
 
 .logout-button {
