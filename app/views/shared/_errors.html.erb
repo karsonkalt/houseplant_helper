@@ -1,1 +1,8 @@
-<h1>TEST!!</h1>
+<div class="card">
+    <h2>There were some errors.</h2>
+    <ul>
+        <% @object.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
