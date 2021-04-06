@@ -26,9 +26,8 @@ class UsersController < ApplicationController
     end
 
     def update
-        byebug
         @user.update(user_params)
-        if @user.save
+        if @user.valid?
             redirect_to @user
         else
             render :edit
