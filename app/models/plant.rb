@@ -11,7 +11,7 @@ class Plant < ApplicationRecord
   scope :species, -> (species) {where(species_id: species.id)}
   scope :user, -> (user) {where(user_id: user.id)}
 
-  # Instance Methods
+  # Display user's species.common_name if no nickname
 
   def nickname_for_views
     if nickname
@@ -20,6 +20,8 @@ class Plant < ApplicationRecord
       "#{user.username}'s #{species.common_name}"
     end
   end
+
+  # Watering Methods
 
   def most_recent_watering
     Watering.most_recent_watering(self)[0]

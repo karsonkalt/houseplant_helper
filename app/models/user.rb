@@ -10,6 +10,12 @@ class User < ApplicationRecord
     validates :email, presence: true
     validates :email, uniqueness: true
 
+    def plants_that_need_to_be_watered
+        plants.select do |plant|
+            plant.needs_to_be_watered?
+        end
+    end
+
     def number_of_plants
         Plant.user(self).count
     end
