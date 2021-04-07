@@ -7,11 +7,20 @@ class PlantsController < ApplicationController
         @plants = @user.plants 
     end
 
+    # TODO DO this thing
+
     def new
         @plant = @user.plants.build
     end
 
     def create
+        @plant = @user.plants.build
+        @plant.update(plant_params)
+        if @plant.save
+            redirect_to @plant
+        else
+            render :new
+        end
     end
     
     def show
@@ -35,5 +44,9 @@ class PlantsController < ApplicationController
 
     def find_and_set_plant
         @plant = Plant.find_by(id: params[:id], user_id: @user)
+    end
+
+    def plant_params
+        params.require(:plant).permit(:species_id, :nickname, :water_frequency)
     end
 end
