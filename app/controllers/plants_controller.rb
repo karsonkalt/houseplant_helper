@@ -14,8 +14,7 @@ class PlantsController < ApplicationController
     end
 
     def create
-        @plant = @user.plants.build
-        @plant.update(plant_params)
+        @plant = @user.plants.build(plant_params)
         if @plant.save
             redirect_to @plant
         else
