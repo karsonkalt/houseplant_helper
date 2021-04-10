@@ -6,7 +6,7 @@
         
         <div class="plant-card-name">
             <%= image_tag plant.species.image_path, class: "small-species-icon" %>
-            <%= link_to plant.nickname_for_views, user_plant_path(@user, plant) %>
+            <%= link_to plant.nickname_for_views, plant_path(plant) %>
         </div>
 
         <div class="plant-card-watering-info">
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <%= link_to "Water this plant", new_user_plant_watering_path(@user, plant), class: "water-button" %>
+        <%= link_to "Water this plant", new_plant_watering_path(plant), class: "water-button" %>
     </div>
 
 <% end %>

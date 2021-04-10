@@ -2,7 +2,9 @@
 
 <div class="card">
 
-    <%= form_with(model: @plant, url: user_plants_path(@user)) do |f| %>
+    <% # NOTE: Using [] for the url will look for the @user/@plant route, if @user isn't declared then it will compact to just @plant. %>
+
+    <%= form_with(model: @plant, url: [@user, @plant]) do |f| %>
         <%= f.label :nickname %>
         <%= f.text_field :nickname %>
         <%= tag.p("Note: Your plant doesn't have to have a nickname.") %>

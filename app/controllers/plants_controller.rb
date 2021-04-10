@@ -1,19 +1,26 @@
 class PlantsController < ApplicationController
 
-    before_action :find_and_set_user
+    before_action :find_and_set_user, only: [:index, :new]
     before_action :find_and_set_plant, only: [:show, :edit, :update, :destroy]
 
     def index
+        # user_plants_path
+        # GET /users/:user_id/plants
+
         @plants = @user.plants 
     end
 
-    # TODO DO this thing
-
     def new
+        # new_user_plant_path
+        # GET /users/:user_id/plants/new
+
         @plant = @user.plants.build
     end
 
     def create
+        # user_plants_path
+        # POST /users/:user_id/plants
+
         @plant = @user.plants.build(plant_params)
         if @plant.save
             redirect_to @plant
@@ -23,16 +30,27 @@ class PlantsController < ApplicationController
     end
     
     def show
+        # plant_path
+        # GET /plants/:id
 
     end
 
     def edit
+        # plant_path
+        # GET /plants/:id/edit
+
     end
 
     def update
+        # plant_path
+        # PATCH /plants/:id
+
     end
 
     def destroy
+        # plant_path
+        # DELETE /plants/:id
+        
     end
 
     private
@@ -42,7 +60,7 @@ class PlantsController < ApplicationController
     end
 
     def find_and_set_plant
-        @plant = Plant.find_by(id: params[:id], user_id: @user)
+        @plant = Plant.find_by_id(params[:id])
     end
 
     def plant_params

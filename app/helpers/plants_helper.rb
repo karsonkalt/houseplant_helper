@@ -11,4 +11,5 @@ module PlantsHelper
             "in " + plant.water_again_in_days.to_s + " days"
         end
     end
+
 end
