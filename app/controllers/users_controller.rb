@@ -3,14 +3,23 @@ class UsersController < ApplicationController
     before_action :find_and_set_user, only: [:show, :edit, :update, :destroy]
 
     def index
+        # users_path
+        # GET /users
+
         @users = User.all
     end
 
     def new
+        # signup_path
+        # GET /signup
+
         @user = User.new
     end
 
     def create
+        # users_path
+        # POST /users
+
         @user = User.new(user_params)
         if @user.save
             redirect_to @user
@@ -20,12 +29,21 @@ class UsersController < ApplicationController
     end
     
     def show
+        # user_path
+        # GET /users/:id
+        
     end
 
     def edit
+        # edit_user_path
+        # GET /users/:id/edit
+
     end
 
     def update
+        # user_path
+        # PATCH	/users/:id
+
         @user.update(user_params)
         if @user.valid?
             redirect_to @user
@@ -35,6 +53,8 @@ class UsersController < ApplicationController
     end
 
     def destroy
+        # user_path
+        # DELETE /users/:id
     end
 
     private
