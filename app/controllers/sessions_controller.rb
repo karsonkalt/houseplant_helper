@@ -1,15 +1,21 @@
 class SessionsController < ApplicationController
 
-    def index
-        render layout:false
-    end
-
     def new
+        # login_path
+        # GET /login
+
     end
 
     def create
+        # login_path
+        # POST /login
+
     end
 
     def destroy
+        # logout_path
+        # GET /logout
+        
     end
+
 end
