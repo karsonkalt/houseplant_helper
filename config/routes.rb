@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'application#index'
+  root 'home#index'
 
   resources :users, shallow: true, only: [:index, :create, :show, :edit, :update, :destroy] do
     resources :plants, shallow: true do

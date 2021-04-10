@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+    skip_before_action :redirect_if_not_logged_in, only: [:new]
     before_action :find_and_set_user, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
 
         @users = User.all
     end
-
+        
     def new
         # signup_path
         # GET /signup
