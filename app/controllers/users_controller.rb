@@ -55,6 +55,7 @@ class UsersController < ApplicationController
     def destroy
         # user_path
         # DELETE /users/:id
+        
     end
 
     private

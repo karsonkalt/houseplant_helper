@@ -50,7 +50,7 @@ class PlantsController < ApplicationController
     def destroy
         # plant_path
         # DELETE /plants/:id
-        
+         
     end
 
     private
