@@ -9,7 +9,7 @@
 
     <%= link_to "Waterings", plant_waterings_path(@plant) %>
     <%= link_to "Edit Plant", edit_plant_path(@plant) %>
-    <%= form_with(model: @plant, url: plant_path(@plant), method: :delete) do |f| %>
+    <%= form_with(model: @plant, method: :delete) do |f| %>
         <%= f.submit "Delete Plant" %>
     <% end %>
 

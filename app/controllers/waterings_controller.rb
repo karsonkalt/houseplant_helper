@@ -1,6 +1,5 @@
 class WateringsController < ApplicationController
 
-    before_action :find_and_set_user
     before_action :find_and_set_plant, only: [:index, :new]
     before_action :find_and_set_watering, only: [:show, :edit, :update, :destroy]
 
