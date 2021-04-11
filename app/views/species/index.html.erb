@@ -4,9 +4,11 @@
 
     <div class="card plant-card">
 
-        <div class="plant-card-name">
-            <%= image_tag species.image_path, class: "small-species-icon" %>
-            <%= link_to species.common_name, species_path(species) %>
+        <div class="plant-card-name-section">
+            <%= image_tag species.image_path, class: "small-species-icon plant-card-icon" %>
+            <%= link_to species_path(species), class: "plant-card-main-info" do %>
+                <p class="plant-card-name" ><%= species.common_name %></p>
+            <% end %>
         </div>
 
         <div class="plant-card-counts-of-species">

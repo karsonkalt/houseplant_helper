@@ -1,0 +1,33 @@
+<div class="card plant-card <%= conditionally_add_overdue_watering_class(plant) %>">
+    
+    <div class="plant-card-name-section">
+        <%= image_tag plant.species.image_path, class: "small-species-icon plant-card-icon" %>
+        <%= link_to plant_path(plant), class: "plant-card-main-info" do %>
+            <p class="plant-card-name" ><%= plant.nickname_for_views %></p>
+            <p class="plant-card-species"><%= plant.species.common_name %></p>
+        <% end %>
+    </div>
+
+    <% if plant.user == current_user %>
+        <div class="plant-card-watering-info">
+            <div class="plant-card-watering-info-section">
+                <p class="days-ago-label">Last Watered</p>
+                <p class="days-ago"><%= plant.days_since_most_recent_watering %> days ago</p>
+            </div>
+            <div class="plant-card-watering-info-section">
+                <p class="days-ago-label">Water Again</p>
+                <p class="days-ago"><%= conditionally_display_today_if_needs_to_be_watered(plant) %></p>
+            </div>
+        </div>
+
+        <div class="plant-card-water-button-section">
+            <div class="plant-card-water-container">
+                <%= link_to new_plant_watering_path(plant), class: "water-button" do %>
+                    <svg class="water-icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path d="M344.864,112.832c-26.176-33.408-53.248-67.904-75.072-104.96C266.912,3.008,261.664,0,256,0s-10.912,3.008-13.76,7.872 c-21.824,37.024-48.896,71.552-75.072,104.928C114.112,180.448,64,244.352,64,320c0,105.888,86.112,192,192,192 s192-86.112,192-192C448,244.384,397.92,180.48,344.864,112.832z M256,480c-88.224,0-160-71.776-160-160 c0-64.608,46.784-124.256,96.352-187.456c21.632-27.584,43.84-55.904,63.648-86.24c19.808,30.336,42.016,58.688,63.648,86.272 C369.216,195.744,416,255.424,416,320C416,408.224,344.224,480,256,480z"/></g></g></svg>
+                    Water
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+
+ </div>

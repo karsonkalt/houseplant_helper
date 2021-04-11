@@ -4,3 +4,6 @@
     <p><%= @species.notes %></p>
     <%= image_tag @species.image_path, class: "large-species-icon" %>
 </div>
+<br>
+<h1>Plants</h1>
+<%= render partial: "plants/plant", collection: @species.plants %>

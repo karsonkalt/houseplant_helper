@@ -1,7 +1,9 @@
 module PlantsHelper
 
     def conditionally_add_overdue_watering_class(plant)
-        plant.needs_to_be_watered? ? "overdue-watering" : nil
+        if current_user == @user
+            plant.needs_to_be_watered? ? "overdue-watering" : nil
+        end
     end
 
     def conditionally_display_today_if_needs_to_be_watered(plant)
