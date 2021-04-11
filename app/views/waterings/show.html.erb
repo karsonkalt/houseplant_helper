@@ -2,8 +2,10 @@
 <div class="card">
     <p><%= @watering.notes %></p>
 
-    <%= link_to "Edit Watering", edit_watering_path(@watering) %>
-    <%= form_with(model: @watering, method: :delete) do |f| %>
-        <%= f.submit "Delete Watering" %>
+    <% if current_user == @watering.plant.user %>
+        <%= link_to "Edit Watering", edit_watering_path(@watering) %>
+        <%= form_with(model: @watering, method: :delete) do |f| %>
+            <%= f.submit "Delete Watering" %>
+        <% end %>
     <% end %>
 </div>

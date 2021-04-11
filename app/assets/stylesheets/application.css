@@ -196,6 +196,15 @@ h1 {
     margin-top: 0;
 }
 
+.double-title-h1 {
+    margin-bottom: 5px;
+}
+
+.double-title-h2 {
+    margin-top: 0;
+    color: #525252;
+}
+
 .card {
     background-color: white;
     border-radius: 10px;
@@ -293,7 +302,7 @@ h1 {
     text-decoration: none;
     padding: 10px 15px;
     transition: .15s background-color;
-    display: flex;
+    display: inline-block;
     align-items: center;
 }
 
