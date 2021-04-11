@@ -1,3 +1,10 @@
-<h1><%= @user.username%>'s Plants</h1>
+<div class="page-title">
+    <div class="page-title-container">
+        <h1><%= @user.username%>'s Plants</h1>
+    </div>
+    <% if @user == current_user %>
+        <%= link_to "Add New Plant", new_user_plant_path(@user), class: "title-button" %>
+    <% end %>
+</div>
 
 <%= render partial: "plant", collection: @plants %>

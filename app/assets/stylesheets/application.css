@@ -120,6 +120,7 @@ h1.title {
 
 .page-container {
     width: 100%;
+    min-width: 750px;
     padding: 20px 100px 20px 380px;
     /* border: 1px solid red; */
 }
@@ -176,14 +177,14 @@ h1.title {
     border-radius: 40px;
     font-size: 16px;
     color: white;
-    background-color: #b1b1b1;
+    background-color: #d2d2d2;
     text-decoration: none;
     padding: 10px 15px;
     transition: .15s background-color;
 }
 
 .logout-button:hover {
-    background-color: #969696;
+    background-color: #c2c2c2;
 }
 
 .content-container {
@@ -203,6 +204,32 @@ h1 {
 .double-title-h2 {
     margin-top: 0;
     color: #525252;
+}
+
+.page-title {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title-container {
+
+}
+
+.title-button {
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #84b655;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    transition: .15s background-color;
+}
+
+.title-button:hover {
+    background-color: #729c4a;
 }
 
 .card {
@@ -267,6 +294,30 @@ h1 {
     
 }
 
+.detail-card {
+    display: flex;
+    padding: 30px;
+}
+
+.detail-card-container {
+    margin-left: 40px;
+}
+
+.detail-card-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.detail-card-item-text {
+    margin-left: 15px;
+}
+
+.detail-icon {
+    height: 30px;
+    width: 30px;
+}
+
 .days-ago-label {
     font-size: 13px;
     text-align: center;
@@ -299,6 +350,7 @@ h1 {
     font-size: 16px;
     color: white;
     background-color: #3c8ae2;
+    height: 20px;
     text-decoration: none;
     padding: 10px 15px;
     transition: .15s background-color;
@@ -308,6 +360,37 @@ h1 {
 
 .water-button:hover {
     background-color: #3170b7;
+}
+
+.edit-button {
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #e9b648;
+    height: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: .15s background-color;
+    display: inline-block;
+    align-items: center;
+}
+
+.delete-button {
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #e94848;
+    height: 40px;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: .15s background-color;
+    display: inline-block;
+    align-items: center;
+}
+
+.inline-button {
+    display: inline;
 }
 
 .water-icon {
