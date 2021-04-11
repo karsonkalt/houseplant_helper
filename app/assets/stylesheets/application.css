@@ -81,6 +81,43 @@ h1.title {
     fill: #47632d;
 }
 
+.home-title {
+    font-size: 22px;
+    color: white;
+}
+
+.form-section {
+    margin-bottom: 15px;
+}
+
+.form-section label {
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.form-section input {
+    padding: 10px;
+    border-radius: 40px;
+    border: none;
+    width: 100%;
+}
+
+.form-button {
+    border-radius: 40px;
+    border: none;
+    background-color: #84b655;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px 18px;
+    transition: .15s background-color;
+}
+
+.form-button:hover {
+    background-color: #79a74e;
+}
+
 .page-container {
     width: 100%;
     padding: 20px 100px 20px 380px;
@@ -95,7 +132,6 @@ h1.title {
 }
 
 .nav-username {
-    border-radius: 40px;
     font-size: 16px;
     color: #6f6f6f;
     text-decoration: none;
@@ -114,6 +150,7 @@ h1.title {
     background-color: #84b655;
     text-decoration: none;
     padding: 10px 15px;
+    margin-bottom: 20px;
     transition: .15s background-color;
 }
 
@@ -170,36 +207,108 @@ h1 {
 .plant-card {
     display: flex;
     justify-content: space-between;
-    border: 2px solid #8fc45d;
 }
 
-.plant-card-name {
+.plant-card-icon {
+    margin-right: 20px;
+    min-width: 75px;
+}
+
+.plant-card-name-section {
     width: 250px;
     display: flex;
     align-items: center;
 }
 
+.plant-card-main-info {
+    text-decoration: none;
+    color: #525252;
+}
+
+.plant-card-main-info:hover {
+    text-decoration: underline;
+}
+
+.plant-card-name {
+    margin: 0;
+    color: #525252;
+    font-size: 18px;
+}
+
+.plant-card-species {
+    color: #797979;
+    margin: 5px 0 0 0;
+    font-size: 15px;
+}
+
 .plant-card-watering-info {
+    width: 260px;
     display: flex;
-    /* border: 1px solid red; */
+    justify-content: space-between;
 }
 
 .plant-card-watering-info-section {
-    /* border: 1px solid blue; */
-    margin-right: 50px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .plant-card-counts-of-species {
     
 }
 
-.tiny-text {
-    color: ;
-    font-size: 10px;
+.days-ago-label {
+    font-size: 13px;
+    text-align: center;
+    color: #797979;
+    margin: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #797979;
+}
+
+.days-ago {
+    font-weight: 500;
+    text-align: center;
+    color: #525252;
+    font-size: 16px;
+    margin: 10px 0 0 0;
+}
+
+.plant-card-water-button-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.plant-card-water-container {
+    display: flex;
 }
 
 .water-button {
-    /* border: 1px solid red; */
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #3c8ae2;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: .15s background-color;
+    display: flex;
+    align-items: center;
+}
+
+.water-button:hover {
+    background-color: #3170b7;
+}
+
+.water-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.water-icon path {
+    fill: white;
 }
 
 .overdue-watering {

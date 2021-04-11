@@ -1,17 +1,11 @@
-<h1>Login</h1>
-
-<div class="card">
-
-    <%= form_with do |f| %>  
+<%= form_with do |f| %>
+    <div class="form-section">  
         <%= f.label :email %>
         <%= f.email_field :email %>
-        <br>
-        <br>
+    </div>
+    <div class="form-section">  
         <%= f.label :password %>
         <%= f.password_field :password %>
-        <br>
-        <br>
-        <%= f.submit %>
-    <% end %>
-
-</div>
+    </div>
+    <%= f.submit "Login", class: "form-button"%>
+<% end %>

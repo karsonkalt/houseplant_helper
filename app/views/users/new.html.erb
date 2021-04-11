@@ -1,3 +1,15 @@
-<h1>Signup</h1>
-
-<%= render "form" %>
+<%= form_with(model: @user) do |f| %>
+    <div class="form-section">  
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+    </div>
+    <div class="form-section">  
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+    </div>
+    <div class="form-section">  
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </div>
+    <%= f.submit "Signup", class: "form-button"%>
+<% end %>

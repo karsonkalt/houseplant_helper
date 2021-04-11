@@ -15,6 +15,8 @@ class UsersController < ApplicationController
         # GET /signup
 
         @user = User.new
+
+        render layout: "home"
     end
 
     def create
