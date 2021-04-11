@@ -26,7 +26,8 @@ class WateringsController < ApplicationController
 
         @watering = @plant.waterings.build(watering_params)
         if @watering.save
-            redirect_to @plant
+            user = @watering.plant.user
+            redirect_to root_path
         else
             render :new
         end

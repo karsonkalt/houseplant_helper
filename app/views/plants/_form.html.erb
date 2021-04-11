@@ -5,21 +5,21 @@
     <% # NOTE: Using [] for the url will look for the @user/@plant route, if @user isn't declared then it will compact to just @plant. %>
 
     <%= form_with(model: @plant, url: [@user, @plant]) do |f| %>
-        <%= f.label :nickname %>
-        <%= f.text_field :nickname %>
-        <%= tag.p("Note: Your plant doesn't have to have a nickname.") %>
+        <div class="form-section application-form">  
+            <%= f.label :nickname %>
+            <%= f.text_field :nickname %>
+            <p class="form-note">Your plant doesn't have to have a nickname</p>
+        </div>
+        <div class="form-section application-form">  
+            <%= f.label :species_id %>
+            <%= f.collection_select :species_id, Species.all, :id, :common_name, prompt: true %>
+        </div>
+        <div class="form-section application-form">  
+            <%= f.label :water_frequency, "Number of days between watering your plant" %>
+            <%= f.number_field :water_frequency, step: 1 %>
+            <p class="form-note">If you aren't sure how often to water your plant, just leave this blank and we will let you know what is recommended.</p>
         <br>
-        <br>    
-        <%= f.label :species_id %>
-        <%= f.collection_select :species_id, Species.all, :id, :common_name, prompt: true %>
-        <br>
-        <br>
-        <%= f.label :water_frequency %>
-        <%= f.number_field :water_frequency, step: 1 %>
-        <%= tag.p("Note: If you aren't sure how often to water your plant, no worries we will let you know what is recommended. You can always adjust how often you need to water your plant.") %>
-        <br>
-        <br>
-        <%= f.submit %>
+        <%= f.submit id: "application-button"%>
     <% end %>
 
 </div>

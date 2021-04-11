@@ -100,15 +100,10 @@ h1.title {
     color: #444444;
 }
 
-.application-button {
-    border-radius: 40px;
-    border: none;
-    background-color: #84b655;
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 12px 18px;
-    transition: .15s background-color;
+.application-form {
+    display: inline-block;
+    width: 400px;
+    margin-bottom: 25px;
 }
 
 .application-button:hover {
@@ -129,6 +124,13 @@ h1.title {
     width: 100%;
 }
 
+.application-form input {
+    padding: 10px;
+    border-radius: 40px;
+    border: 1px solid #444444;
+    width: 100%;
+}
+
 .form-button {
     border-radius: 40px;
     border: none;
@@ -140,8 +142,26 @@ h1.title {
     transition: .15s background-color;
 }
 
+#application-button {
+    border-radius: 40px;
+    border: none;
+    background-color: #84b655;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px 18px;
+    transition: .15s background-color;
+    margin-top: 10px;
+}
+
 .form-button:hover {
     background-color: #79a74e;
+}
+
+.form-note {
+    color: #737373;
+    margin-top: 5px;
+    font-size: 15px;
 }
 
 .page-container {
