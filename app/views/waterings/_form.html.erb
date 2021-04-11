@@ -3,11 +3,11 @@
 <div class="card">
 
     <%= form_with(model: @watering, url: [@plant, @watering]) do |f| %>
-        <%= f.label :notes %>
-        <%= f.text_area :notes %>
-        <br>
-        <br>    
-        <%= f.submit %>
+        <div class="form-section application-form">  
+            <%= f.label :notes %>
+            <%= f.text_area :notes %>
+        </div>   
+        <%= f.submit class: "application-button" %>
     <% end %>
 
 </div>

@@ -7,12 +7,12 @@
         <div class="plant-card-name-section">
             <%= image_tag species.image_path, class: "small-species-icon plant-card-icon" %>
             <%= link_to species_path(species), class: "plant-card-main-info" do %>
-                <p class="plant-card-name" ><%= species.common_name %></p>
+                <p class="detail-card-item-link" ><%= species.common_name %></p>
             <% end %>
         </div>
 
         <div class="plant-card-counts-of-species">
-            <h1><%= species.number_of_plants %> Plants</h1>
+            <span class="watering-notes"><%= display_species_data(species) %></span>
         </div>
     </div>
 <% end %>

@@ -47,7 +47,7 @@
                 <span class="detail-card-item-text"><%= @plant.species.notes %></span>
             </div>
         </div>
-        <%= link_to "View Plant's Waterings", plant_waterings_path(@plant), class: "detail-card-item-link" %>
+        <%= link_to "View #{@plant.nickname_for_views}'s Waterings", plant_waterings_path(@plant), class: "detail-card-item-link" %>
     </div>
 
    

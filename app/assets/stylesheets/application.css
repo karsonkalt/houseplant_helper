@@ -96,6 +96,32 @@ h1.title {
     margin-bottom: 5px;
 }
 
+.application-form label {
+    color: #444444;
+}
+
+.application-button {
+    border-radius: 40px;
+    border: none;
+    background-color: #84b655;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px 18px;
+    transition: .15s background-color;
+}
+
+.application-button:hover {
+    background-color: #79a74e;
+}
+
+#watering_notes {
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .form-section input {
     padding: 10px;
     border-radius: 40px;
@@ -217,6 +243,10 @@ h1 {
 
 }
 
+.page-title-padding {
+    margin-bottom: 10px;
+}
+
 .title-button {
     border-radius: 40px;
     font-size: 16px;
@@ -267,7 +297,7 @@ h1 {
 
 .plant-card-name {
     margin: 0;
-    color: #525252;
+    color: #3c8ae2;
     font-size: 18px;
 }
 
@@ -291,7 +321,9 @@ h1 {
 }
 
 .plant-card-counts-of-species {
-    
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .detail-card {
