@@ -14,9 +14,11 @@ class UsersController < ApplicationController
         # signup_path
         # GET /signup
 
-        @user = User.new
-
-        render layout: "home"
+        redirect_if_logged_in
+        if !logged_in?
+            @user = User.new
+            render layout: "home"
+        end
     end
 
     def create
@@ -40,7 +42,8 @@ class UsersController < ApplicationController
     def edit
         # edit_user_path
         # GET /users/:id/edit
-
+        
+        redirect_if_not_authorized_to_view(@user)
     end
 
     def update

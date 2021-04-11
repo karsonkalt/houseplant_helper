@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
         # login_path
         # GET /login
 
+        redirect_if_logged_in
+        
     end
 
     def create

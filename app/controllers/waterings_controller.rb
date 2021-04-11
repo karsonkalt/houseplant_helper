@@ -14,6 +14,9 @@ class WateringsController < ApplicationController
         # new_plant_watering_path
         # GET /plants/:plant_id/waterings/new
 
+        user = @plant.user
+        redirect_if_not_authorized_to_view(user)
+
         @watering = @plant.waterings.build
     end
 
@@ -32,6 +35,10 @@ class WateringsController < ApplicationController
     def edit
         # edit_watering_path
         # GET /waterings/:id/edit
+
+        plant = @watering.plant
+        user = plant.user
+        redirect_if_not_authorized_to_view(user)
 
     end
 

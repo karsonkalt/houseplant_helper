@@ -14,6 +14,7 @@ class PlantsController < ApplicationController
         # new_user_plant_path
         # GET /users/:user_id/plants/new
 
+        redirect_if_not_authorized_to_view(@user)
         @plant = @user.plants.build
     end
 
@@ -38,7 +39,8 @@ class PlantsController < ApplicationController
     def edit
         # plant_path
         # GET /plants/:id/edit
-
+        user = @plant.user
+        redirect_if_not_authorized_to_view(user)
     end
 
     def update
