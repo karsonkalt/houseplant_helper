@@ -317,6 +317,15 @@ h1 {
     margin-bottom: 10px;
 }
 
+.detail-card-item-left {
+    width: 200px;
+    min-width: 200px;
+}
+
+.detail-card-split {
+    justify-content: space-between;
+}
+
 .detail-card-item-text {
     margin-left: 15px;
 }
@@ -336,6 +345,10 @@ h1 {
     min-width: 25px;
     height: 25px;
     width: 25px;
+}
+
+.watering-notes {
+    color: #656565;
 }
 
 .days-ago-label {

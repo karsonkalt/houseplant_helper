@@ -36,7 +36,6 @@ class WateringsController < ApplicationController
     def show
         # watering_path
         # GET /waterings/:id
-
     end
 
     def edit
@@ -64,6 +63,9 @@ class WateringsController < ApplicationController
         # watering_path
         # DELETE /waterings/:id
 
+        plant = @watering.plant
+        @watering.destroy
+        redirect_to plant
     end
 
     private

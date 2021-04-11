@@ -1,6 +1,9 @@
 <h1><%= @plant.nickname_for_views%>'s Waterings</h1>
 <% @waterings.each do |watering| %>
-    <div class="card">
-        <%= link_to watering.date_for_views, watering_path(watering) %>
+    <div class="card detail-card">
+        <%= link_to watering.date_for_views, watering_path(watering), class: "detail-card-item-link detail-card-item-left" %>
+        <% if watering.notes? %>
+            <span class="watering-notes"><%= watering.notes %></span>
+        <% end %>
     </div>
 <% end %>

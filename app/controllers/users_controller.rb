@@ -37,7 +37,6 @@ class UsersController < ApplicationController
     def show
         # user_path
         # GET /users/:id
-        
     end
 
     def edit
@@ -63,6 +62,9 @@ class UsersController < ApplicationController
         # user_path
         # DELETE /users/:id
         
+        @user.destroy
+        session.delete(:user_id)
+        redirect_to root_path
     end
 
     private
