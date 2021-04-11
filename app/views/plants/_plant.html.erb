@@ -12,7 +12,7 @@
         <div class="plant-card-watering-info">
             <div class="plant-card-watering-info-section">
                 <p class="days-ago-label">Last Watered</p>
-                <p class="days-ago"><%= plant.days_since_most_recent_watering %> days ago</p>
+                <p class="days-ago"><%= conditionally_display_never_if_never_watered(plant) %></p>
             </div>
             <div class="plant-card-watering-info-section">
                 <p class="days-ago-label">Water Again</p>

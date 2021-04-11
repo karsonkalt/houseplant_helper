@@ -28,20 +28,36 @@ class Plant < ApplicationRecord
   end
 
   def most_recent_watering_date
-    most_recent_watering.datetime.to_date
+    if most_recent_watering
+      most_recent_watering.datetime.to_date
+    end
   end
 
   def days_since_most_recent_watering
-    date_dif = Date.today - most_recent_watering_date
-    date_dif.to_i
+    if most_recent_watering
+      date_dif = Date.today - most_recent_watering_date
+      date_dif.to_i
+    end
   end
 
   def watering_due_today?
-    days_since_most_recent_watering == water_frequency ? true : false
+    if most_recent_watering == nil
+      true
+    elsif days_since_most_recent_watering == water_frequency
+      true
+    else
+      false
+    end
   end
 
   def watering_overdue?
-    days_since_most_recent_watering > water_frequency ? true : false
+    if most_recent_watering == nil
+      true
+    elsif days_since_most_recent_watering > water_frequency
+      true
+    else
+      false
+    end
   end
 
   def needs_to_be_watered?

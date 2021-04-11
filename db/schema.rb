@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_023404) do
     t.index ["plant_id"], name: "index_waterings_on_plant_id"
   end
 
-  add_foreign_key "plants", "species"
-  add_foreign_key "plants", "users"
-  add_foreign_key "waterings", "plants"
+  add_foreign_key "plants", "species", on_delete: :cascade
+  add_foreign_key "plants", "users", on_delete: :cascade
+  add_foreign_key "waterings", "plants", on_delete: :cascade
 end

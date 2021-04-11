@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    skip_before_action :redirect_if_not_logged_in, only: [:new]
+    skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
     before_action :find_and_set_user, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -27,7 +27,8 @@ class UsersController < ApplicationController
 
         @user = User.new(user_params)
         if @user.save
-            redirect_to @user
+            session[:user_id] = @user.id
+            redirect_to root_path
         else
             render :new
         end
@@ -54,7 +55,7 @@ class UsersController < ApplicationController
         if @user.valid?
             redirect_to @user
         else
-            render :edit
+            render :edit, layout: "home"
         end
     end
 
@@ -71,7 +72,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :email)
+        params.require(:user).permit(:username, :email, :password)
     end
 
 end

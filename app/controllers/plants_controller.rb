@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
 
-    before_action :find_and_set_user, only: [:index, :new]
+    before_action :find_and_set_user, only: [:index, :new, :create]
     before_action :find_and_set_plant, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -33,12 +33,12 @@ class PlantsController < ApplicationController
     def show
         # plant_path
         # GET /plants/:id
-
     end
 
     def edit
         # plant_path
         # GET /plants/:id/edit
+
         user = @plant.user
         redirect_if_not_authorized_to_view(user)
     end
@@ -47,12 +47,19 @@ class PlantsController < ApplicationController
         # plant_path
         # PATCH /plants/:id
 
+        if @plant.update(plant_params)
+            redirect_to @plant
+        else
+            render :new
+        end
     end
 
     def destroy
         # plant_path
         # DELETE /plants/:id
-         
+
+        @plant.destroy
+        redirect_to root_path
     end
 
     private

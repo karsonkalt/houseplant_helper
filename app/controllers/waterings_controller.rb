@@ -1,6 +1,6 @@
 class WateringsController < ApplicationController
 
-    before_action :find_and_set_plant, only: [:index, :new]
+    before_action :find_and_set_plant, only: [:index, :new, :create]
     before_action :find_and_set_watering, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -24,6 +24,13 @@ class WateringsController < ApplicationController
         # plant_waterings_path
         # POST /plants/:plant_id/waterings
 
+        @watering = @plant.waterings.build(watering_params)
+        if @watering.save
+            redirect_to @plant
+        else
+            render :new
+        end
+
     end
     
     def show
@@ -46,6 +53,11 @@ class WateringsController < ApplicationController
         # watering_path
         # PATCH /waterings/:id
 
+        if @watering.update(watering_params)
+            redirect_to @watering
+        else
+            render :new
+        end
     end
 
     def destroy
@@ -62,6 +74,10 @@ class WateringsController < ApplicationController
 
     def find_and_set_watering
         @watering = Watering.find_by_id(params[:id])
+    end
+
+    def watering_params
+        params.require(:watering).permit(:notes)
     end
 
 end

@@ -301,6 +301,14 @@ h1 {
 
 .detail-card-container {
     margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.detail-card-container-top {
+    margin-bottom: 20px;
 }
 
 .detail-card-item {
@@ -313,9 +321,21 @@ h1 {
     margin-left: 15px;
 }
 
+.detail-card-item-link {
+    font-size: 16px;
+    color: #3c8ae2;
+    text-decoration: none;
+}
+
+.detail-card-item-link:hover {
+    text-decoration: underline;
+}
+
 .detail-icon {
-    height: 30px;
-    width: 30px;
+    min-height: 25px;
+    min-width: 25px;
+    height: 25px;
+    width: 25px;
 }
 
 .days-ago-label {
@@ -373,6 +393,7 @@ h1 {
     transition: .15s background-color;
     display: inline-block;
     align-items: center;
+    margin: 0 10px;
 }
 
 .delete-button {
@@ -408,6 +429,7 @@ h1 {
 }
 
 .large-species-icon {
+    min-width: 150px;
     width: 150px;
     height: 150px;
     border-radius: 50%;
