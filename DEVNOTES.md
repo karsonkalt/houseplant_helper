@@ -2,6 +2,7 @@
 
 # Questions
 - Where is the best place to put current_user and logged_in?, as a helper in the ApplicationController or inside ApplicationHelpers?
+- The helpers are available to the views, but not the controllers?
 
 
 
@@ -12,7 +13,7 @@
 
 
 # Inconsistencies / Refactoring
-- 
+- I have the same methods inside the controller and the helper.
 
 
 

@@ -34,7 +34,8 @@ def random_user_generator
     rand(30..100).times do
         username = Faker::Internet.username(specifier: 4..15)
         email = Faker::Internet.email
-        User.create(username: username, email: email)
+        password = "password"
+        User.create(username: username, email: email, password: password)
     end
 end
 
