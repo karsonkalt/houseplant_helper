@@ -21,5 +21,6 @@
 
 
 # Todo
-- Refactor .new and .create inside controllers to user build method appropriately and consistently across controllers.
-- Add scope methods to only show overdue/sort alphabetically/top-users
+- Add class level scope methods to only show overdue/sort alphabetically/top-users
+- Build omniauth
+- Do I have too much logic in the views?

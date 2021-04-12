@@ -3,7 +3,7 @@
         <h1><%= @user.username%>'s Plants</h1>
     </div>
     <% if @user == current_user %>
-        <%= link_to "Show Overdue", user_plants_path(@user) + "?needs_to_be_watered?=true", class: "title-button" %>
+        <%= link_to "Show Overdue", user_plants_path(@user) + "?needs_to_be_watered?=true", class: "title-button blue-title-button" %>
         <%= link_to "Add New Plant", new_user_plant_path(@user), class: "title-button" %>
     <% end %>
 </div>

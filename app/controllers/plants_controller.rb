@@ -76,10 +76,12 @@ class PlantsController < ApplicationController
         params.require(:plant).permit(:species_id, :nickname, :water_frequency)
     end
 
-    # I am really proud of the code below! But does this belong in the controller or the model?
+    # But does the code below belong in the controller or the model?
     # I think the controller becuase it relates to creating an instance variable and the q params.
     # TODO: As Matteo about the line below.
     # It's not a scope method because it doesn't query the database, it runs on the objects.
+
+    #move into the model, query_parameters can be the argument.
 
     def find_and_set_plants_and_select_query_parameters
         if !request.query_parameters.empty?

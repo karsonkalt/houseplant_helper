@@ -282,6 +282,14 @@ h1 {
     background-color: #729c4a;
 }
 
+.blue-title-button {
+    background-color: #3c8ae2;
+}
+
+.blue-title-button:hover {
+    background-color: #3170b7;
+}
+
 .card {
     background-color: white;
     border-radius: 10px;
