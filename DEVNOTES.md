@@ -3,6 +3,8 @@
 # Questions
 - Where is the best place to put current_user and logged_in?, as a helper in the ApplicationController or inside ApplicationHelpers?
 - The helpers are available to the views, but not the controllers?
+- Is it okay for me to have methods on the model where it returns data "for the view" or should those be exclusively in the helpers?
+- Can I use query params as the scope, or should it have its own route?
 
 
 
