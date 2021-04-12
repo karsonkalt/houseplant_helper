@@ -7,7 +7,7 @@ class PlantsController < ApplicationController
         # user_plants_path
         # GET /users/:user_id/plants
 
-        @plants = @user.plants 
+        find_and_set_plants_and_select_query_parameters
     end
 
     def new
@@ -75,4 +75,20 @@ class PlantsController < ApplicationController
     def plant_params
         params.require(:plant).permit(:species_id, :nickname, :water_frequency)
     end
+
+    # I am really proud of the code below! :)
+
+    def find_and_set_plants_and_select_query_parameters
+        if !request.query_parameters.empty?
+            request.query_parameters.each do |scope, value|
+                @plants ||= @user.plants
+                @plants = @plants.select do |plant|
+                    plant.send("#{scope}").to_s == value
+                end
+            end
+        else
+            @plants = @user.plants
+        end
+    end
+
 end

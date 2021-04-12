@@ -19,6 +19,5 @@
 
 
 # Todo
-- Build destroy methods in controllers
-- Add update and create methods to all controllers
 - Refactor .new and .create inside controllers to user build method appropriately and consistently across controllers.
+- Add scope methods to only show overdue/sort alphabetically/top-users
