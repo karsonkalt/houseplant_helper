@@ -60,3 +60,5 @@ gem "bcrypt", "~> 3.1"
 gem "faker", "~> 2.17"
 
 gem "omniauth", "~> 2.0"
+
+gem "omniauth-google-oauth2", "~> 1.0"

@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
         # GET /login
 
         redirect_if_logged_in
-        
     end
 
     def create

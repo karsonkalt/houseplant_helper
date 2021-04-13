@@ -24,3 +24,9 @@
 - Add class level scope methods to only show overdue/sort alphabetically/top-users
 - Build omniauth
 - Do I have too much logic in the views?
+- Display feedback to user if they fail the login
+- Sessions#new doesn't use a model
+- Hilight if something fails validation, rails will add the class?
+- Use flash on the failed user signin page?
+- build a flash helper to do that?
+- display errors on the signup page with new template.
