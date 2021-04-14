@@ -142,6 +142,10 @@ h1.title {
     transition: .15s background-color;
 }
 
+.omniauth-button {
+    background-color: #4285F4;
+}
+
 #application-button {
     border-radius: 40px;
     border: none;
@@ -156,6 +160,10 @@ h1.title {
 
 .form-button:hover {
     background-color: #79a74e;
+}
+
+.omniauth-button:hover {
+    background-color: #3771cf;
 }
 
 .form-note {
@@ -188,6 +196,19 @@ h1.title {
 
 .nav-username:hover {
     text-decoration: underline;
+}
+
+.third-party-login {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.login-info-text {
+    color: white;
+}
+
+.login-info-text a {
+    color: white;
 }
 
 .login-button {

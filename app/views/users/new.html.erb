@@ -13,3 +13,9 @@
     </div>
     <%= f.submit "Signup", class: "form-button"%>
 <% end %>
+
+<div class="third-party-login">
+    <%= button_to "Signup with Google", '/auth/google_oauth2', class: "form-button omniauth-button"%>
+</div>
+
+<p class="login-info-text">Already have an account? <%= link_to "Login", login_path, class: "signup-link" %></p>

@@ -10,8 +10,8 @@
     <%= f.submit "Login", class: "form-button"%>
 <% end %>
 
-<p>Don't have an account? <%= link_to "Signup", signup_path, class: "signup-link" %></p>
-
 <div class="third-party-login">
-    <%= button_to "Log in with Google", '/auth/google_oauth2' %>
+    <%= button_to "Log in with Google", '/auth/google_oauth2', class: "form-button omniauth-button"%>
 </div>
+
+<p class="login-info-text">Don't have an account? <%= link_to "Signup", signup_path, class: "signup-link" %></p>
