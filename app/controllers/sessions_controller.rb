@@ -35,12 +35,7 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        @user = User.find_or_create_by(uid: auth["uid"]) do |user|
-            user.email = auth['info']['email']
-            user.password = SecureRandom.hex(20)
-            user.username = auth['info']['name'].downcase.gsub(" ", "_")
-        end
-        
+        @user = User.from_omniauth(auth)
         if @user.valid?
             session[:user_id] = @user.id
             redirect_to root_path
