@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
   root 'home#index'
 
   resources :users, shallow: true, only: [:index, :create, :show, :edit, :update, :destroy] do
