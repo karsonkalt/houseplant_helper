@@ -39,5 +39,5 @@
 yarn-debug.log*
 .yarn-integrity
 
-# Ignore the enviornment variable.
+# Ignore the enviornment variables.
 .env
