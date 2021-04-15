@@ -538,3 +538,7 @@ h1 {
 .footer {
     color: #b5b5b5;
 }
+
+.error {
+    color: white;
+}
