@@ -23,7 +23,8 @@ class PlantsController < ApplicationController
         # POST /users/:user_id/plants
 
         @plant = @user.plants.build(plant_params)
-        if @plant.save
+        if @plant.valid?
+            @plant.save
             redirect_to @plant
         else
             render :new

@@ -6,7 +6,7 @@ class Plant < ApplicationRecord
   validates :nickname, length: {maximum: 20}
   validates :water_frequency, presence: true
 
-  before_validation :inherit_water_frequency_from_species_if_nil
+  before_save :inherit_water_frequency_from_species_if_nil
 
   scope :species, -> (species) {where(species_id: species.id)}
   scope :user, -> (user) {where(user_id: user.id)}
