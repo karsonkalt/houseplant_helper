@@ -12,7 +12,10 @@
 
 # Bugs
 - Methods inside application helper are not available in the controller. I tried to move them and can't get it figured out.
-- 
+- Dashboard is pinging the database a TON.
+- Check logic between watering, showing weird stuff
+- Shouldn't say overdue if due today for a watering.
+- If you haven't logged anything yet it should say TBD instead of overdue or today.
 
 
 
@@ -28,9 +31,7 @@
 - Do I have too much logic in the views?
 - Display feedback to user if they fail the login
 - Sessions#new doesn't use a model
-- Hilight if something fails validation, rails will add the class?
 - Use flash on the failed user signin page?
 - build a flash helper to do that?
 - display errors on the signup page with new template.
-- Build in if record error or 404
-- Rescue from errorr name with method to use
+- Rescue from error name with method to use

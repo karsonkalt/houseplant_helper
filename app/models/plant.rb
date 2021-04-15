@@ -4,8 +4,8 @@ class Plant < ApplicationRecord
   has_many :waterings
 
   validates :nickname, length: {maximum: 20}
-  validates :water_frequency, presence: true
 
+  before_validation :convert_empty_nickname_string_to_nil
   before_save :inherit_water_frequency_from_species_if_nil
 
   scope :species, -> (species) {where(species_id: species.id)}
@@ -36,7 +36,7 @@ class Plant < ApplicationRecord
 
   def days_since_most_recent_watering
     if most_recent_watering
-      date_dif = Date.today - most_recent_watering_date
+      date_dif = DateTime.now.utc.to_date - most_recent_watering_date
       date_dif.to_i
     end
   end
@@ -83,6 +83,12 @@ class Plant < ApplicationRecord
   def inherit_water_frequency_from_species_if_nil
     if water_frequency == nil
       self.water_frequency = species.water_frequency
+    end
+  end
+
+  def convert_empty_nickname_string_to_nil
+    if nickname == ""
+      self.nickname = nil
     end
   end
 
