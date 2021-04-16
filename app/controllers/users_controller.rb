@@ -54,7 +54,7 @@ class UsersController < ApplicationController
         if @user.valid?
             redirect_to @user
         else
-            render :edit, layout: "home"
+            render :edit
         end
     end
 

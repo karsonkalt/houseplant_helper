@@ -9,6 +9,8 @@ Specs:
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+# I spoke to Matteo and it looks like this is leftover from an old assignment. I instead decided to create query params as it is more "RESTful" instead of custom route calling a scope method.
+
 - [x] Include signup (how e.g. Devise)
 - [x] Include login (how e.g. Devise)
 - [x] Include logout (how e.g. Devise)
@@ -19,6 +21,6 @@ Specs:
 
 Confirm:
 - [x] The application is pretty DRY
-- [ ] Limited logic in controllers
+- [x] Limited logic in controllers
 - [x] Views use helper methods if appropriate
 - [x] Views use partials if appropriate
