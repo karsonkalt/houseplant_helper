@@ -1,3 +1,7 @@
+<% if flash %>
+    <p class="error"><%= flash[:error] %></p>
+<% end %>
+
 <%= form_with do |f| %>
     <div class="form-section">  
         <%= f.label :email %>

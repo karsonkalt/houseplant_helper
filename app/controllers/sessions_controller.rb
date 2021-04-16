@@ -15,13 +15,13 @@ class SessionsController < ApplicationController
         # login_path
         # POST /login
 
-        user = User.find_by(email: params[:email])
-        if user && user.authenticate(params[:password])
-            session[:user_id] = user.id
+        @user = User.find_by(email: params[:email])
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
             redirect_to root_path
         else
-            redirect_to login_path
-            # TODO Add some way to tell invalid credentials.
+            flash[:error] = "Invalid credentials."
+            render :new
         end
 
     end

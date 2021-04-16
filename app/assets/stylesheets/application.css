@@ -32,6 +32,8 @@ body {
 }
 
 svg.header-logo {
+    min-height: 100px;
+    min-width: 100px;
     width: 100px;
     height: 100px;
 }
@@ -43,7 +45,7 @@ path.leaf {
 
 h1.title {
     color: white;
-    margin: 10px 0 50px 0;
+    margin: 10px 0 10px 0;
 }
 
 .main-nav {
@@ -219,6 +221,7 @@ h1.title {
     text-decoration: none;
     padding: 10px 15px;
     margin-bottom: 20px;
+    margin-top: 20px;
     transition: .15s background-color;
 }
 

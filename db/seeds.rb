@@ -46,9 +46,6 @@ Species.create({common_name: "Spider plant",
     water_frequency: 9,
     image_path: "spider_plant.jpg",
     notes: "Spider plants like even moisture; they don't like to be too dry or too wet. Keep plants in bright to moderate indirect sunlight. Spider plants do not appreciate direct, hot sunlight, which can burn their leaves, causing brown tips and spots. Spider plants grow fairly quickly and can easily become pot bound."})
-        
-
-
 
 NOTE = [
     "He looked a little brown on the ends today. I turned him around and moved him to the living room.",

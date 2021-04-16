@@ -6,8 +6,8 @@ class PlantsController < ApplicationController
     def index
         # user_plants_path
         # GET /users/:user_id/plants
-
-        find_and_set_plants_and_select_query_parameters
+        
+        find_and_set_plants_and_filter_query_parameters(request)
     end
 
     def new
@@ -77,14 +77,7 @@ class PlantsController < ApplicationController
         params.require(:plant).permit(:species_id, :nickname, :water_frequency)
     end
 
-    # But does the code below belong in the controller or the model?
-    # I think the controller becuase it relates to creating an instance variable and the q params.
-    # TODO: As Matteo about the line below.
-    # It's not a scope method because it doesn't query the database, it runs on the objects.
-
-    #move into the model, query_parameters can be the argument.
-
-    def find_and_set_plants_and_select_query_parameters
+    def find_and_set_plants_and_filter_query_parameters(request)
         if !request.query_parameters.empty?
             request.query_parameters.each do |scope, value|
                 @plants ||= @user.plants

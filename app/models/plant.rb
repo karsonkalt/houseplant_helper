@@ -13,13 +13,8 @@ class Plant < ApplicationRecord
 
   # Display user's species.common_name if no nickname
 
-  #restructure one line :)
   def nickname_for_views
-    if nickname
-      nickname
-    else
-      "#{user.username}'s #{species.common_name}"
-    end
+    nickname ? nickname : "#{user.username}'s #{species.common_name}"
   end
 
   # Watering Methods
