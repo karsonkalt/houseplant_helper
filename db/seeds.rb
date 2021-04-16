@@ -26,6 +26,29 @@ Species.create({common_name: "ZZ plant",
     water_frequency: 12,
     image_path: "zz_plant.jpg",
     notes: "Situate your ZZ in low to bright indirect light, and water when fully dry. Typically you can even forget a watering…or three…and it will still thrive. ZZ is also very resistant to diseases and insects. If your plant’s branches intrude into your space and get in the way, simply prune them away."})
+Species.create({common_name: "Chinese money plant",
+    water_frequency: 7,
+    image_path: "chinese_money.jpg",
+    notes: "Light-wise, the best situation for a Chinese money plant is bright light, with no direct sunlight. Direct sun scorches leaves, and light shade may encourage larger leaves. They’re said to be hardy down to freezing, and a period of cool temperatures may make them more likely to produce their tiny white flowers on pink stems."})
+Species.create({common_name: "Air plant",
+    water_frequency: 7,
+    image_path: "air_plant.jpg",
+    notes: "Air plants prefer bright indirect light. Meaning, don't plan to keep them right in a windowsill unless it receives filtered light, or possibly only gentle morning sun. Air plants are prone to getting a bit “fried” in direct sunlight, especially when it is amplified through a glass window or terrarium."})
+Species.create({common_name: "Jade plant",
+    water_frequency: 14,
+    image_path: "jade_plant.jpg",
+    notes: "Jade plants need at least 4 hours of direct sunlight each day. Young plants should be kept in bright, indirect sunlight; large, well-established jade plants can handle more direct sunlight."})
+Species.create({common_name: "Lucky bamboo",
+    water_frequency: 6,
+    image_path: "lucky_bamboo.jpg",
+    notes: "In it's native environment Dracaena sanderiana receive an ample amount of light. However, the surrounding plants shade the lucky bamboo from direct exposure to the sun. Too much direct sunlight can cause the leaves to burn."})
+Species.create({common_name: "Spider plant",
+    water_frequency: 9,
+    image_path: "spider_plant.jpg",
+    notes: "Spider plants like even moisture; they don't like to be too dry or too wet. Keep plants in bright to moderate indirect sunlight. Spider plants do not appreciate direct, hot sunlight, which can burn their leaves, causing brown tips and spots. Spider plants grow fairly quickly and can easily become pot bound."})
+        
+
+
 
 NOTE = [
     "He looked a little brown on the ends today. I turned him around and moved him to the living room.",
