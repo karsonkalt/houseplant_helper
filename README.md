@@ -15,7 +15,7 @@ The database is managed through ActiveRecord and layer on ruby methods for addit
 
 ## Development
 
-To get started with Houseplant Helper, run `bundle` from the command line to install all necessary gems. After dependencies have been installed run `rails db:reset` to run the db migrations and seed the database, then run `rails s` from the console to start serving the site to `http://localhost:3000/`
+To get started with Houseplant Helper, run `bundle` from the command line to install all necessary gems. After dependencies have been installed run `rails db:reset` to run the db migrations and seed the database, then run `rails s` from the console to start serving the site to `http://localhost:3000/`. You can then log in with your own information or view a seed account by viewing the User database and selecting a User email and entering the seed password `password`.
 
 
 ## Contributing to Houseplant Helper
