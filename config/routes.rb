@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'errors/internal_server_error'
   root 'home#index'
 
+  get '/species/easy_plants', to: 'species#easy_plants'
+
   resources :users, shallow: true, only: [:index, :create, :show, :edit, :update, :destroy] do
     resources :plants, shallow: true do
       resources :waterings, shallow: true

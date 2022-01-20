@@ -90,4 +90,7 @@ class PlantsController < ApplicationController
         end
     end
 
+    # Check if plant responds to word passed in from scope, so it won't error out.
+    # Where instead of select, will run in activerecord models, where chains to activerecord and will already be filtered.
+
 end

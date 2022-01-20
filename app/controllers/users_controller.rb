@@ -54,7 +54,7 @@ class UsersController < ApplicationController
         if @user.valid?
             redirect_to @user
         else
-            render :edit
+            render :edi
         end
     end
 

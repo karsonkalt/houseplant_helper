@@ -14,6 +14,10 @@ class SpeciesController < ApplicationController
         # GET /species/:id
     end
 
+    def easy_plants
+        @species = Species.order(water_frequency: :desc).limit(4)
+    end
+
     private
 
     def find_and_set_species
