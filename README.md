@@ -5,6 +5,8 @@
 
 Houseplant helper is a Ruby on Rails web application used to track how often you water your houseplants, keep notes on how they are doing, and get tips on how to take care of your plants. A user can create plants which also belong to a species and edit data that belongs to the logged_in user.
 
+![Houseplant Helper Home Page](https://res.cloudinary.com/practicaldev/image/fetch/s--Mf2xTfka--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jgsmbmupn1436kqjjo7z.png)
+![Houseplant Helper Species Page](https://res.cloudinary.com/practicaldev/image/fetch/s--1J0BkHhO--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xox1utgn041xomctguce.png)
 
 ## Architecture and models
 
